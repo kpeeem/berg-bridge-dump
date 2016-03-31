@@ -1,0 +1,89 @@
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 syslog.info syslogd started: BusyBox v1.21.0
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: klogd started: BusyBox v1.21.0 (2013-04-24 17:37:10 BST)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: Linux version 2.6.36.4 (nick@buildbot) (gcc version 4.6.3 (Buildroot 2013.02-dirty) ) #1 Wed Apr 24 18:01:13 BST 2013
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: CPU: ARM926EJ-S [41069265] revision 5 (ARMv5TEJ), cr=00053177
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: CPU: VIVT data cache, VIVT instruction cache
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: Machine: Atmel AT91SAM9G20-EK
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: Memory policy: ECC disabled, Data cache writeback
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: Clocks: CPU 396 MHz, master 132 MHz, main 18.432 MHz
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.debug kernel: On node 0 totalpages: 8192
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.debug kernel: free_area_init_node: node 0, pgdat c034dac0, node_mem_map c036e000
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.debug kernel:   Normal zone: 64 pages used for memmap
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.debug kernel:   Normal zone: 0 pages reserved
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.debug kernel:   Normal zone: 8128 pages, LIFO batch:0
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 8128
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: Kernel command line: console=ttyS0,115200 root=/dev/mtdblock6 mtdparts=atmel_nand:128k(bootstrap)ro,256k(uboot)ro,128k(env1),128k(env2),2M(linux),16M(config),-(root) rw rootfstype=jffs2 runmode=standard
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: PID hash table entries: 128 (order: -3, 512 bytes)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: Dentry cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: Inode-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: Memory: 32MB = 32MB total
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: Memory: 28968k/28968k available, 3800k reserved, 0K highmem
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: Virtual kernel memory layout:
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:     DMA     : 0xffc00000 - 0xffe00000   (   2 MB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:     vmalloc : 0xc2800000 - 0xfee00000   ( 966 MB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:     lowmem  : 0xc0000000 - 0xc2000000   (  32 MB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:       .init : 0xc0008000 - 0xc0025000   ( 116 kB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:       .text : 0xc0025000 - 0xc0318000   (3020 kB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel:       .data : 0xc0330000 - 0xc034e200   ( 121 kB)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: NR_IRQS:192
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: AT91: 96 gpio irqs in 3 banks
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: Console: colour dummy device 80x30
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: console [ttyS0] enabled
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: Calibrating delay loop... 197.83 BogoMIPS (lpj=989184)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: pid_max: default: 32768 minimum: 301
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: eth0: Atmel MACB at 0xfffc4000 irq 21 (40:d8:55:01:ca:19)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: eth0: attached PHY driver [Micrel KS8041] (mii_bus:phy_addr=ffffffff:00, irq=-1)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: usbmon: debugfs is not available
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: at91_ohci at91_ohci: AT91 OHCI
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: at91_ohci at91_ohci: new USB bus registered, assigned bus number 1
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: at91_ohci at91_ohci: irq 20, io mem 0x00500000
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: hub 1-0:1.0: USB hub found
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: hub 1-0:1.0: 2 ports detected
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: Initializing USB Mass Storage driver...
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: usbcore: registered new interface driver usb-storage
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: USB Mass Storage support registered.
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: mice: PS/2 mouse device common for all mice
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: i2c /dev entries driver
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: Software Watchdog Timer: 0.07 initialized. soft_noboot=0 soft_margin=60 sec (nowayout= 0)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: TCP cubic registered
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: NET: Registered protocol family 17
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: can: controller area network core (rev 20090105 abi 8)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: NET: Registered protocol family 29
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: can: raw protocol (rev 20090105)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: can: broadcast manager protocol (rev 20090105 t)
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: Registering the dns_resolver key type
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.info kernel: VFP support v0.3: not present
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: Empty flash at 0x011b6734 ends at 0x011b6800
+Jan  1 00:00:07 berg-cloud-bridge-p9tsmuu55 kern.warn kernel: Empty flash at 0x06ced9a4 ends at 0x06cee000
+Jan  1 00:00:09 berg-cloud-bridge-p9tsmuu55 kern.info kernel: eth0: link up (10/Full)
+Sep  1 12:00:00 berg-cloud-bridge-p9tsmuu55 authpriv.info dropbear[439]: Running in background
+Sep  1 12:00:00 berg-cloud-bridge-p9tsmuu55 kern.notice kernel: JFFS2 notice: (440) check_node_data: wrong data CRC in data node at 0x06cecf44: read 0x52de99f8, calculated 0x892a34d.
+Sep  1 12:00:10 berg-cloud-bridge-p9tsmuu55 authpriv.info dropbear[443]: Child connection from 192.168.1.41:63002
+Sep  1 12:00:15 berg-cloud-bridge-p9tsmuu55 authpriv.notice dropbear[443]: Password auth succeeded for 'root' from 192.168.1.41:63002
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.notice ntpd[446]: ntpd 4.2.6p5@1.2349 Wed Apr 24 16:46:54 UTC 2013 (1)
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.notice ntpd[447]: proto: precision = 4.239 usec
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.debug ntpd[447]: ntp_io: estimated max descriptors: 1024, initial socket boundary: 16
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.info ntpd[447]: Listen and drop on 0 v4wildcard 0.0.0.0 UDP 123
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.info ntpd[447]: Listen normally on 1 lo 127.0.0.1 UDP 123
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.info ntpd[447]: Listen normally on 2 eth0 192.168.1.11 UDP 123
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.info ntpd[447]: peers refreshed
+Jan 24 22:09:01 berg-cloud-bridge-p9tsmuu55 daemon.info ntpd[447]: Listening on routing socket on fd #19 for interface updates
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Found user 'default' (UID 1000) and group 'default' (GID 1000).
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Successfully dropped root privileges.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: avahi-daemon 0.6.31 starting up.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.warn avahi-daemon[452]: WARNING: No NSS support for mDNS detected, consider installing nss-mdns!
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Loading service file /etc/avahi/services/sftp-ssh.service.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Loading service file /etc/avahi/services/ssh.service.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Joining mDNS multicast group on interface eth0.IPv4 with address 192.168.1.11.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: New relevant interface eth0.IPv4 for mDNS.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Network interface enumeration completed.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Registering new address record for 192.168.1.11 on eth0.IPv4.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Registering HINFO record with values 'ARMV5TEJL'/'LINUX'.
+Jan 24 22:09:02 berg-cloud-bridge-p9tsmuu55 daemon.info init: starting pid 458, tty '/dev/ttyS0': '/sbin/getty -L ttyS0 115200 vt100 '
+Jan 24 22:09:03 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Server startup complete. Host name is berg-cloud-bridge-p9tsmuu55.local. Local service cookie is 1639160192.
+Jan 24 22:09:04 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Service "berg-cloud-bridge-p9tsmuu55" (/etc/avahi/services/ssh.service) successfully established.
+Jan 24 22:09:04 berg-cloud-bridge-p9tsmuu55 daemon.info avahi-daemon[452]: Service "berg-cloud-bridge-p9tsmuu55" (/etc/avahi/services/sftp-ssh.service) successfully established.

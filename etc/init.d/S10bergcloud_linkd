@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# Start the eth carrier monitor
+#
+
+case "$1" in
+  start)
+    pidof bergcloud_linkd > /dev/null
+    if [ $? -eq 0 ]; then
+      echo "BERG Cloud linkd already running"
+    else
+      echo "Starting BERG Cloud linkd..."
+      /usr/bin/oneshot_bergcloud_linkd.sh &
+    fi
+    ;;
+  stop)
+    echo -n "Stopping BERG Cloud linkd..."
+    /usr/bin/killall bergcloud_linkd
+    ;;
+  restart|reload)
+    "$0" stop
+    "$0" start
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart}"
+    exit 1
+esac
+
+exit $?

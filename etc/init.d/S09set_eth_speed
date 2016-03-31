@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Force eth0 into 10Base-T
+#
+if [ -f /usr/local/bergcloud-bridge/set_ethernet_speed.py ]; then
+  /usr/bin/python /usr/local/bergcloud-bridge/set_ethernet_speed.py
+elif [ -f /usr/local/bergcloud-bridge/set_ethernet_speed.pyc ]; then
+  /usr/bin/python /usr/local/bergcloud-bridge/set_ethernet_speed.pyc
+fi
+

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Start the BERG Cloud Bridge App
+# Copyright BERG 2012
+
+
+#!/bin/sh
+
+case "$1" in
+    start|"")
+        cp /usr/bin/oneshot_bergcloud_bridge.sh /tmp/
+        /tmp/oneshot_bergcloud_bridge.sh &
+        ;;
+    stop)
+        killall sh
+        killall python
+        ;;
+    *)
+        echo "Usage: S99bergcloud_bridge {start|stop}" >&2
+        exit 1
+        ;;
+esac

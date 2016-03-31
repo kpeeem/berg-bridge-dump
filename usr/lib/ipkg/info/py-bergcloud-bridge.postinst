@@ -1,0 +1,25 @@
+# Post installation script
+
+chown -R root:root /root
+chmod -R go-rwx /root
+
+# If we've just dumped an init script that will prevent SSH from
+# starting, we now kill the Dropbear process to reflect that
+grep 'SSH not enabled by package config' /etc/init.d/S60dropbear
+if [ $? -eq 0 ]; then
+  echo "Stopping Dropbear"
+  killall dropbear
+fi
+
+# Fix our system so we mount read-only!
+/bin/sed -i -e's/rw,noauto/ro,noauto/' /etc/fstab
+/bin/sed -i -e's/remount,rw/remount,ro/' /etc/inittab
+
+# Rerun our new linkd
+/etc/init.d/S10bergcloud_linkd start
+
+# Remount RO if this is our first OTA
+/usr/bin/sleep_and_remount &
+
+echo "postinst finished" >> /tmp/install.log
+exit 0

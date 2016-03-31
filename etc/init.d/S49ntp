@@ -1,0 +1,74 @@
+#! /bin/sh
+#
+# System-V init script for the openntp daemon
+#
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="network time protocol daemon"
+CUSTOM_NTP_SERVER_CONFIG=/tmp/dhcp-ntp-servers
+NAME=ntpd
+DAEMON=/usr/sbin/$NAME
+NTPDATE_BIN=/usr/bin/ntpdate
+TLSDATE_BIN=/usr/bin/tlsdate
+DAEMON_CONFIG_FILE="/tmp/ntpd.conf"
+DAEMON_CONFIG="-c $DAEMON_CONFIG_FILE"
+
+# Gracefully exit if the package has been removed.
+test -x $DAEMON || exit 0
+
+# Read config file if it is present.
+if [ -r /etc/default/$NAME ]
+then
+        . /etc/default/$NAME
+fi
+
+case "$1" in
+  start)
+        # Default to Sept 2012 to allow SSL to work!
+        /bin/date -s 201209011200.00
+        USE_NTP="YES"
+        if [ -x $NTPDATE_BIN ] ; then
+            if [ -f $CUSTOM_NTP_SERVER_CONFIG ]; then
+                echo -n "Getting initial time via custom ntp servers"
+                export NTPSERVERS=`cat $CUSTOM_NTP_SERVER_CONFIG`
+            else
+                echo -n "Getting initial time via default ntp servers"
+            fi
+            $NTPDATE_BIN $NTPDATE_OPTS $NTPSERVERS > /dev/null 2>&1
+            RC=$?
+            if [[ $RC != 0 ]] ; then
+                echo "NTP failed, falling back to tlsdate"
+                $TLSDATE_BIN -s -H bridge.bergcloud.com
+            fi
+            echo "."
+        fi
+
+        echo "driftfile /tmp/ntpd_drift" > $DAEMON_CONFIG_FILE
+        for i in $NTPSERVERS; do
+            echo "server $i" >> $DAEMON_CONFIG_FILE
+        done
+        
+        echo -n "Starting $DESC: $NAME"
+        start-stop-daemon -S -q -x $DAEMON -- $DAEMON_CONFIG
+        echo "."
+        ;;
+  stop) echo "Stopping $DESC: $NAME"
+        killall -q ntpd
+        killall -q tlsdated
+        echo "."
+        ;;
+  reload|force-reload) echo -n "Reloading $DESC configuration..."
+        start-stop-daemon -K -q -n $NAME -s 1
+        echo "done."
+  ;;
+  restart) echo "Restarting $DESC: $NAME"
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+  *) echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

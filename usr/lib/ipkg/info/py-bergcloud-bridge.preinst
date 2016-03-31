@@ -1,0 +1,9 @@
+# Pre installation script
+
+# Tidy up any old python code
+rm -f /usr/local/bergcloud-bridge/*.py 
+
+/etc/init.d/S10bergcloud_linkd stop
+
+echo "preinst" >> /tmp/install.log
+exit 0

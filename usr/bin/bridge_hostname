@@ -1,0 +1,49 @@
+#!/usr/bin/python
+
+import socket
+import fcntl
+import struct
+
+
+
+def b36encode(number):
+    if not isinstance(number, (int, long)):
+        raise TypeError('number must be an integer')
+    if number < 0:
+        raise ValueError('number must be positive')
+
+    alphabet = '0123456789abcdefghijklmnopqrstuvwxyz'
+
+    base36 = ''
+    while number:
+        number, i = divmod(number, 36)
+        base36 = alphabet[i] + base36
+
+    return base36 or alphabet[0]
+
+
+def getHwAddr(ifname):
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    info = fcntl.ioctl(s.fileno(), 0x8927,  struct.pack('256s', ifname[:15]))
+    return info[18:24]
+#return ''.join(['%02x:' % ord(char) for char in info[18:24]])[:-1]
+
+def hostname():
+    v = 0
+    c = 0
+    try:
+        s = getHwAddr('eth0')
+    except IOError:
+        s = getHwAddr('eth1')
+    
+    for k in s:
+        v = (v << 8) | ord(k)
+    
+    return "berg-cloud-bridge-%s" % b36encode(v)
+
+def main():
+    print hostname()
+
+
+if __name__=='__main__':
+    main()

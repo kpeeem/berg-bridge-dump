@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: pynetlinux
+Version: 1.1
+Summary: Linux network configuration library for Python
+Home-page: http://github.com/rlisagor/pynetlinux
+Author: Roman Lisagor
+Author-email: rlisagor+pynetlinux@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: Linux
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Networking
+Classifier: Topic :: System :: Systems Administration

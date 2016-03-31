@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sleep 30
+mount -o remount,ro /
+echo "Remount RO exited $?"

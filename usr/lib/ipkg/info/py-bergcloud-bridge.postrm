@@ -1,0 +1,4 @@
+# Post removal script
+
+echo "postrm" >> /tmp/install.log
+exit 0

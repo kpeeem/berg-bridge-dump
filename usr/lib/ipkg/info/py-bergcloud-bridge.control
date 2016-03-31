@@ -1,0 +1,12 @@
+### Begin CONTROL/py-bergcloud-bridge
+Package: py-bergcloud-bridge
+Priority: optional
+Section: Misc
+Version: 2.3.1
+Architecture: arm
+Maintainer: Nick Ludlam <nl@bergcloud.com>
+Depends:
+Build: f3c7946
+Description: The bridging software provided on the BERG Cloud Bridge
+  to facilitate cloud-to-device messages.
+ 

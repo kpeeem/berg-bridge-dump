@@ -1,0 +1,5 @@
+# Pre removal script
+
+echo "prerm" >> /tmp/install.log
+
+exit 0

@@ -1,0 +1,5 @@
+#/bin/sh
+echo "Setting hostname"
+/usr/bin/bridge_hostname > /tmp/$$_fhname
+/bin/hostname -F /tmp/$$_fhname
+rm -f /tmp/$$_fhname
